@@ -1,0 +1,114 @@
+img {
+  height: 50px;
+}
+
+.navbar {
+  background-color: var(--yellow-theme-nav-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 1.2rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    padding: 0px 20px;
+    flex: 1;
+
+    &__logo {
+      color: var(--yellow-theme-main-color);
+      cursor: pointer;
+      text-decoration: dashed;
+
+      &__brand {
+        font-weight: 900;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      list-style: none;
+      text-align: center;
+
+      &_item {
+        line-height: 40px;
+        margin-right: 1.5rem;
+        font-size: 1.5rem;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 3px;
+          width: 0;
+          background: transparent;
+          transition: all 0.5s ease;
+        }
+
+        &:hover::after {
+          background-color: var(--yellow-theme-main-color);
+          width: 100%;
+        }
+
+        &__links {
+          color: var(--yellow-theme-main-color);
+          text-decoration: none;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// .navbar__logo__brand {
+//     font-weight: 900;
+//     font-size: 20px;
+//     text-transform: uppercase;
+//     letter-spacing: 2px;
+// }
+
+// .navbar__container__logo {
+//     color: var(--yellow-theme-main-color);
+//     text-decoration: none;
+// }
+
+.nav-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar__container__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -110%;
+    opacity: 1;
+    transition: all 0.5s ease;
+
+    &.active {
+      background: #181818;
+      left: 0px;
+      opacity: 1;
+    }
+    &__item {
+      border-bottom: 1px solid #282828;
+      margin: 0px;
+      padding: 20px 0px;
+    }
+  }
+
+  .nav-icon {
+    display: block;
+    cursor: pointer;
+    color: var(--yellow-theme-main-color);
+    padding-right: 3rem;
+  }
+}
